@@ -1,0 +1,64 @@
+/**
+ * 功能样式 处理一些逻辑和css兼容
+ */
+
+/**
+ * 过渡缓动
+ */
+.transition(@property:all,@duration:0.5s,@timing-function:ease,@delay:0s,...){
+  transition: @arguments;
+  -moz-transition: @arguments;
+  -webkit-transition: @arguments;
+  -o-transition: @arguments;
+}
+
+/**
+ * 角度
+ */
+.transform(@deg){
+  transform:rotate(@deg);
+  -ms-transform:rotate(@deg);
+  -moz-transform:rotate(@deg);
+  -webkit-transform:rotate(@deg);
+  -o-transform:rotate(@deg);
+}
+
+/**
+ * 绘制箭头
+ */
+.draw-arrow(@size,@direction,@color){
+  width: 0px;
+  height: 0px;
+
+  & when (@direction="down"){
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+  }
+
+  & when (@direction="right"){
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: @size+2 solid @color;
+  }
+
+  & when (@direction="left"){
+    border-bottom: @size solid transparent;
+    border-top: @size solid transparent;
+    border-right: @size+2 solid @color;
+  }
+
+  & when (@direction="up"){
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+  }
+}
+
+/**
+ * 透明度设置0-100
+ */
+.alpha(@value){
+  opacity: (@value/100);
+  filter:alpha(opacity=@value);
+}

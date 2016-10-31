@@ -1,0 +1,95 @@
+.u-calendar{
+  position: relative;
+  display: inline-block;
+
+  .datePicked{
+
+  }
+
+  .picker{
+    .transition(height,.3s);
+    width: 296px;
+    height: 0px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: #f6f6f6;
+    font-family: Microsoft YaHei,Arial;
+
+    .head{
+      text-align: center;
+      padding: 0 10px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #363636;
+      color: #fff;
+      font-size: 14px;
+
+      .prev{
+        float: left;
+      }
+      .next{
+        float: right;
+      }
+      .date-info{
+        font-size: 16px;
+        margin: 0 5px;
+      }
+
+      span:hover{
+        color: #ccc;
+        cursor: pointer;
+      }
+    }
+
+    .main{
+      border: solid 1px #cfcfcf;
+      th{
+        font-size: 12px;
+        color: #898989;
+        text-align: center;
+        height: 28px;
+      }
+
+      span{
+        box-sizing: border-box;
+        display: block;
+        border: solid 1px #d2d2d2;
+        box-shadow: 2px 2px 1px #fff inset;
+        text-align: center;
+        width: 40px;
+        height: 36px;
+        line-height: 36px;
+        margin: 1px;
+        font-size: 14px;
+        color: #363636;
+        &:hover{
+          cursor: pointer;
+          border-color: #009cff;
+          border-style: dotted;
+          background-color: #c3efff;
+          box-shadow: none;
+        }
+      }
+      .prevMonth span,.nextMonth span{
+        color: #c6c6c6;
+      }
+      .today span{
+        box-shadow: none;
+        border-color: #3fc7fa;
+        background-color: #3fc7fa;
+        color: #fff;
+      }
+      .disabled span{
+        box-shadow: none;
+        background-color: #e6e6e6;
+        color: #bbb;
+        cursor:not-allowed;
+        &:hover{
+          border: solid 1px #d2d2d2;
+        }
+      }
+    }
+  }
+}

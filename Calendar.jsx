@@ -5,6 +5,8 @@
 import * as React from 'react';
 import ClassNames from 'classnames';
 
+import './style/component.less'
+
 import CalendarHeader from './calendar/CalendarHeader.jsx';
 import CalendarMain from './calendar/CalendarMain.jsx';
 
